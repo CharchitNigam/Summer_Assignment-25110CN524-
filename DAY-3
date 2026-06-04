@@ -1,1 +1,86 @@
-
+#include <stdio.h>
+// to check whether a number is prime or not
+int main() 
+{
+    int num, i, flag = 0;
+    printf("Enter a positive integer: ");
+    scanf("%d", &num);
+    for(i = 2; i <= num/2; ++i) 
+    {
+        if(num % i == 0) 
+        {
+            flag = 1;
+            break;
+        }
+    }
+    if (num == 1) 
+    {
+        printf("1 is neither prime nor composite.");
+    }
+    else 
+    {
+        if (flag == 0)
+            printf("%d is a prime number.", num);
+        else
+            printf("%d is not a prime number.", num);
+    }
+    return 0;
+}
+// to print prime numbers in a range
+int main ()
+{
+    int l, h, i, flag;
+    printf("Enter two positive integers: ");
+    scanf("%d %d", &l, &h);
+    printf("Prime numbers between %d and %d are: ", l, h);
+    for(i = l; i <= h; ++i) 
+    {
+        if (i == 1) 
+            continue;
+        flag = 0;
+        for(int j = 2; j <= i/2; ++j) 
+        {
+            if(i % j == 0) 
+            {
+                flag = 1;
+                break;
+            }
+        }
+        if (flag == 0)
+            printf("%d ", i);
+    }
+    return 0;
+}
+// to find GCD of two numbers
+int main()          
+{
+    int num1, num2, i, gcd;
+    printf("Enter two integers: ");
+    scanf("%d %d", &num1, &num2);
+    for(i = 1; i <= num1 && i <= num2; ++i) 
+    {
+        if(num1 % i == 0 && num2 % i == 0)
+            gcd = i;
+    }
+    printf("GCD of %d and %d is %d", num1, num2, gcd);
+    return 0;
+}
+// to find LCM of two numbers
+int main()  
+{
+    int num1, num2, max, lcm;
+    printf("Enter two integers: ");
+    scanf("%d %d", &num1, &num2);
+    max = (num1 > num2) ? num1 : num2;
+    while(1) 
+    {
+        if(max % num1 == 0 && max % num2 == 0) 
+        {
+            lcm = max;
+            break;
+        }
+        ++max;
+    }
+    printf("LCM of %d and %d is %d", num1, num2, lcm);
+    return 0;
+}
