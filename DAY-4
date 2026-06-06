@@ -1,1 +1,77 @@
 
+#include <stdio.h>
+int main ()
+{
+    // to generate a fibonacci series
+    int n, a = 0, b = 1, c; 
+    printf("Enter the number of terms: ");
+    scanf("%d", &n);    
+    printf("Fibonacci Series: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", a);
+        c = a + b;
+        a = b;
+        b = c;
+    }
+    return 0;
+}
+// to find nth term of fibonacci series
+int main ()
+{
+    int n, a = 0, b = 1, c; 
+    printf("Enter the term number: ");
+    scanf("%d", &n);    
+    if (n == 1) {
+        printf("The %dth term is: %d", n, a);
+    } else if (n == 2) {
+        printf("The %dth term is: %d", n, b);
+    } else {
+        for (int i = 3; i <= n; i++) {
+            c = a + b;
+            a = b;
+            b = c;
+        }
+        printf("The %dth term is: %d", n, c);
+    }
+    return 0;
+}
+// to check Armstrong number
+int main ()
+{
+    int num, oNum, rem, result = 0;
+    printf("Enter an integer: ");
+    scanf("%d", &num);
+    oNum = num;
+    while (oNum != 0) {
+        rem = oNum % 10;
+        result += rem * rem * rem;
+        oNum /= 10;
+    }
+    if (result == num) {
+        printf("%d is an Armstrong number.", num);
+    } else {
+        printf("%d is not an Armstrong number.", num);
+    }
+    return 0;
+}
+// to print Armstrong numbers in a range
+int main ()
+{
+    int low, high, num, oNum, rem, result;
+    printf("Enter the lower and upper limits: ");
+    scanf("%d %d", &low, &high);
+    printf("Armstrong numbers between %d and %d are: ", low, high);
+    for (num = low; num <= high; num++) {
+        oNum = num;
+        result = 0;
+        while (oNum != 0) {
+            rem = oNum % 10;
+            result += rem * rem * rem;
+            oNum /= 10;
+        }
+        if (result == num) {
+            printf("%d ", num);
+        }
+    }
+    return 0;
+}
