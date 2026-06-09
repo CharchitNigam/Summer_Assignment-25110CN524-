@@ -1,0 +1,86 @@
+#include <stdio.h>
+int fact(int);
+int main ()
+{
+    // recursive factorial
+    int n; 
+    printf("Enter a number: "); 
+    scanf("%d",&n);
+    int f=fact(n);
+    printf("Factorial of %d is %d",n,f);
+    return 0;
+    
+}
+int fact(int x)
+{
+    if (x<=1)
+    {
+        return 1;
+    }
+    return x*fact(x-1);
+    
+}
+#include <stdio.h>
+int fib(int);
+int main ()
+{
+    // recursive fibonacci series
+    int ft=0,st=1,nt;
+    int ttr;
+    printf("Enter the times you want it to run:");
+    scanf("%d",&ttr);
+    int fibo=fib(ttr);
+    
+}
+int fib(int n)
+{
+    int f=0,s=1,nt;printf("0\t");
+    for (int i=0;i<n;i++)
+    {
+        nt=f+s;
+        printf("%d\t",nt);
+        f=s;s=nt;
+    }
+}
+#include <stdio.h>
+int sod(int);
+int main()
+{
+    // recursive sum of digits
+    int n;
+    printf("Enter a number:");
+    scanf("%d",&n);
+    int sum=sod(n);
+    printf("Sum of digits:%d",sum);
+    return 0;
+    
+}
+int sod(int s)
+{
+    if (s==0) 
+    {
+        return 0;
+    }
+    return (s%10)+sod(s/10);
+}#include <stdio.h>
+
+int revnum(int onum, int rev); 
+
+int main() {
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    
+    int rev = revnum(num, 0); 
+    
+    printf("Reverse of the number %d is %d.\n", num, rev);
+    return 0;
+}
+
+int revnum(int onum, int rev) 
+{
+    if (onum == 0) {
+        return rev;
+    }
+    return revnum(onum / 10, rev * 10 + (onum % 10));
+}
