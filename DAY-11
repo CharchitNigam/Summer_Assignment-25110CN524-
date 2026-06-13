@@ -1,0 +1,90 @@
+#include <stdio.h>
+int sum(int,int);
+int main ()
+{
+    // to find sum of two numbers using function
+    int n1,n2,s;
+    s=sum(n1,n2);
+    printf("Sum is :%d",s);
+    return 0;
+}
+int sum(int x,int y)
+{
+    printf("Enter Value:");scanf("%d",&x);
+    printf("Enter Value:");scanf("%d",&y);
+    return (x+y);
+}
+
+#include <stdio.h>
+int isprime(int);
+int main()
+{
+    int n;
+    printf("Enter value:");scanf("%d",&n);
+    if(n<=1)
+    {
+        printf("Invalid value!\n");
+    }
+    else
+    {
+        printf("%d is Prime!\n",isprime(n));
+    }
+    return 0;
+}
+int isprime(int u)
+{
+    int x,i=0,cnt=0;
+    for(int i=2;i<u;i++)
+    {
+        if(u%i==0)
+        {
+            return 0;
+        }
+    }
+}
+#include <stdio.h>
+int max(int,int);
+int main ()
+{
+    int v1,v2;
+    int vmax=max(v1,v2);
+    return 0;
+}
+int max(int x,int y)
+{
+    printf("Value 1:");scanf("%d",&x);
+    printf("Value 2:");scanf("%d",&y);
+    if(x>y)
+    {
+        printf("%d is maximum!",x);
+    }
+    else
+        printf("%d is maximum!",y);
+    
+}
+#include <stdio.h>
+int fact(int);
+int main()
+{
+    int n,f;
+    printf("Enter number:");scanf("%d",&n);
+    f=fact(n);
+    printf("Factorial is:%d",f);
+    return 0;
+}
+int fact(int num)
+{
+    if(num<=1)
+    {
+        printf("Value is:1\n");return 1;
+    }
+    else
+    {
+        int pdt=1;
+        for(int i=1;i<=num;i++)
+        {
+            pdt=pdt*i;
+        }
+        return pdt;
+    }
+}
