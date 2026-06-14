@@ -1,0 +1,137 @@
+#include <stdio.h>
+#include <string.h>
+int pali(int);
+int main ()
+{
+    int n;printf("Enter value:");scanf("%d",&n);
+    int ispali=pali(n);
+    if(ispali==1)
+    {
+        printf("Plaindrome!\n");
+    }
+    else
+    {
+        printf("Not a palindrome!\n");
+    }
+    return 0;
+}
+int pali(int num)
+{
+    char s[100];
+    sprintf(s,"%d",num);
+    int l=strlen(s);
+    int start=0;
+    int end=l-1;
+    while(start<end)
+    {
+        if(s[start]!=s[end])
+        {
+            return 0;
+        }
+        start++;end--;
+    }
+}
+
+
+
+#include <stdio.h>
+#include <math.h>
+int armstrong(int);
+int main()
+{
+    int n;printf("Enter number:");scanf("%d",&n);
+    int isarm=armstrong(n);
+    if(isarm==1)
+    {
+        printf("Armstrong!\n");
+    }
+    else
+    {
+        printf("Not Armstrong!\n");
+    }
+    return 0;
+}
+int armstrong(int num)
+{
+    int orgval=num;
+    int sum=0,digits=0;
+    int temp=num;
+    while(temp>0)
+    {
+        digits++;temp=temp/10;
+    }
+    temp=num;
+    while(temp>0)
+    {
+        int rem=temp%10;
+        sum=sum+pow(rem,digits);
+        temp=temp/10;
+    }
+    if(sum==orgval)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+    
+}
+
+#include <stdio.h>
+int fib(int);
+int main ()
+{
+    int n;printf("Enter value:");scanf("%d",&n);
+    fib(n);printf("\n");
+    return 0;
+}
+int fib(int num)
+{
+    int ft=0,st=1,nt;
+    if(num<=0) return 0;
+    for(int i=1;i<=num;i++)
+    {
+        printf("%d ",ft);
+        nt=ft+st;ft=st;st=nt;
+    }
+    return 0;
+}
+
+
+
+#include <stdio.h>
+int pernum(int);
+int main ()
+{
+    int n;printf("Enter number:");scanf("%d",&n);
+    int pn=pernum(n);
+    if(pn==1)
+    {
+        printf("Perfect number!\n");
+    }
+    else
+    {
+        printf("Not a perfect number!\n");
+    }
+    return 0;
+}
+int pernum(int num)
+{
+    int sum=0;
+    for(int i=1;i<num;i++)
+    {
+        if(num%i==0)
+        {
+            sum+=i;
+        }
+    }
+    if(sum==num && num>0)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
