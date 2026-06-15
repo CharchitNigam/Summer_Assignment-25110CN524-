@@ -1,0 +1,105 @@
+#include <stdio.h>
+int main ()
+{
+    // to input and display array
+    int noe;
+    printf("Enter number of elements: ");
+    scanf("%d",&noe);
+    int array[noe];
+    for(int i=0;i<noe;i++)
+    {
+        printf("Enter value:");scanf("%d",&array[i]);
+    }
+    printf("Array has been entered!\n");
+    printf("Your Array is: \n");
+    for(int i=0;i<noe;i++)
+    {
+        printf("%d ",array[i]);
+    }
+    return 0;
+}
+
+#include <stdio.h>
+int main()
+{
+    // to find sum and avg of array
+    int noe;
+    printf("Enter number of elements:");
+    scanf("%d",&noe);
+    int a[noe];
+    int sum=0;
+    for(int i=0;i<noe;i++)
+    {
+        printf("enter value:");
+        scanf("%d",&a[i]);
+        sum+=a[i];
+    }
+    printf("Sum is:%d\n",sum);
+    float avg=(float)sum/noe;
+    printf("Average is:%.4f",avg);
+    return 0;
+}
+
+#include <stdio.h>
+int main()
+{
+    // to find largest and smallest element in the array
+    int noe;
+    printf("Enter number of elements:");
+    scanf("%d",&noe);
+    int a[noe];
+    int L,S;
+    for(int i=0;i<noe;i++)
+    {
+        printf("Enter Value:");scanf("%d",&a[i]);
+    }
+    printf("Values have been entered !!\n");
+    for(int i=0;i<noe;i++)
+    {
+        L=a[0],S=a[0];
+        for(int j=0;j<noe;j++)
+        {
+            if(a[i]>L)
+            {
+                L=a[i];
+            }
+            if(a[i]<S)
+            {
+                S=a[i];
+            }
+        }
+    }
+    printf("Largest:%d \t Smallest:%d\n",L,S);
+    return 0;
+}
+
+#include <stdio.h>
+int main()
+{
+    // to count even and odd elements
+    int noe;
+    printf("Enter number of elements:");
+    scanf("%d",&noe);
+    int cnteven=0,cntodd=0;
+    int arr[noe];
+    for(int i=0;i<noe;i++)
+    {
+        printf("Enter Value:");
+        scanf("%d",&arr[i]);
+    }
+    printf("\nValues have been entered!!\n\n");
+    for(int i=0;i<noe;i++)
+    {
+        if(arr[i]%2==0)
+        {
+            cnteven++;
+        }
+        else
+        {
+            cntodd++;
+        }
+    }
+    printf("Odd Values:%d\n",cntodd);
+    printf("Even Values:%d\n",cnteven);
+    return 0;
+}
