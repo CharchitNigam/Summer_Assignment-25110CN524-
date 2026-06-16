@@ -1,0 +1,93 @@
+#include <stdio.h>
+int main()
+{
+    // to find frequency of an element
+    int noe;
+    printf("Enter number of elements:");
+    scanf("%d",&noe);
+    int a[noe];
+    for(int i=0;i<noe;i++)
+    {
+        printf("Enter Value:");
+        scanf("%d",&a[i]);
+    }
+    printf("Value has been entered !!\n");
+    int ntbf;int cnt=0;
+    printf("Enter value to be found:");
+    scanf("%d",&ntbf);
+    for(int j=0;j<noe;j++)
+    {
+        if(a[j]==ntbf)
+        {
+            cnt++;
+        }
+    }
+    printf("Frequency of %d : %d",ntbf,cnt);
+    return 0;
+}
+
+#include <stdio.h>
+int main()
+{
+    // second largest element
+    int noe;
+    printf("Enter number of elements:");
+    scanf("%d",&noe);
+    int a[noe];
+    for(int i=0;i<noe;i++)
+    {
+        printf("Enter Value:");
+        scanf("%d",&a[i]);
+    }
+    printf("Values have been entered !!\n\n");
+    int L,SL,loc=0;
+    for(int j=0;j<noe;j++)
+    {
+        L=a[0];
+        if(a[j]>L)
+        {
+            L=a[j];loc=j;
+        }
+    }
+    SL=(loc!=0)?a[0]:a[1];
+    for(int j=0;j<noe;j++)
+    {
+        if(a[j]>SL && j!=loc)
+        {
+            SL=a[j];
+        }
+    }
+    
+    printf("Second largest = %d",SL);
+    return 0;
+}
+
+#include <stdio.h>
+int main()
+{
+    // to find duplicates in an array
+    int noe;
+    printf("Enter number of elements:");
+    scanf("%d",&noe);
+    int a[noe];
+    for(int i=0;i<noe;i++)
+    {
+        printf("Enter value:");scanf("%d",&a[i]);
+    }
+    printf("VALUES ENTERED!!\n");
+    int targetval;
+    printf("Enter value:");scanf("%d",&targetval);
+    int cnt=0;
+    for(int j=0;j<noe;j++)
+    {
+        if(a[j]==targetval)
+        {
+            printf("FOUND!\n");
+            cnt++;
+            if(cnt>1)
+            {
+                printf("Duplicate value : %d,found %d times",a[j],cnt);
+            }
+        }
+    }
+}
