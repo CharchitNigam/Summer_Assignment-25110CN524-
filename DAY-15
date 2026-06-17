@@ -1,0 +1,91 @@
+#include <stdio.h>
+int main ()
+{
+    // to reverse array
+    int noe;
+    printf("Enter number of elements:");
+    scanf("%d",&noe);
+    int a[noe];
+    for(int i=0;i<noe;i++)
+    {
+        printf("Enter value:");scanf("%d",&a[i]);
+    }
+    printf("Values entered!!\n");
+    for(int j=noe-1;j>=0;j--)
+    {
+        printf("Reversed array is : %d ",a[j]);
+    }
+    return 0;
+    
+}
+
+#include <stdio.h>
+int main ()
+{
+    int noe=3;
+    int a[3]={ 2,0,5 };
+    int t=a[0];
+    for(int i=0;i<noe-1;i++)
+    {
+        a[i]=a[i+1];
+    }
+    a[noe-1]=t;
+    printf("Normal array : ");
+    for(int i=0;i<noe;i++)
+    {
+        printf("%d ",a[i]);
+    }
+    printf("\n\n");
+    printf("Left Rotated Array!!\n");
+    for(int i=0;i<noe;i++)
+    {
+        printf("%d ",a[i]);
+    }
+    return 0;
+}
+
+#include <stdio.h>
+
+int main() {
+    int noe = 3;
+    int a[3] = {0, 5, 2}; 
+    int temp = a[noe - 1];
+    for (int i = noe - 1; i > 0; i--)
+    {
+        a[i] = a[i - 1];
+    }
+    a[0] = temp;
+    printf("Right Rotated Array!!\n");
+    for (int i = 0; i < noe; i++) 
+    {
+        printf("%d ", a[i]);
+    }
+
+    return 0;
+}#include <stdio.h>
+int main ()
+{
+    // to move zeroes to the end
+    int noe=3;
+    int a[3]={2,0,5};
+    int cnt=0;
+    for(int i=0;i<noe;i++)
+    {
+        if(a[i]!=0)
+        {
+            a[cnt]=a[i];
+            cnt++;
+        }
+    }
+    while(cnt<noe)
+    {
+        a[cnt]=0;
+        cnt++;
+    }
+    printf("Modified Array:");
+    for(int i=0;i<noe;i++)
+    {
+        printf("%d ",a[i]);
+    }
+    return 0;
+}
