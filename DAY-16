@@ -1,0 +1,94 @@
+#include <stdio.h>
+int main ()
+{
+    // to find missing number in array
+    int noe,i=0,j=0;
+    printf("Enter number of elements:");
+    scanf("%d",&noe);
+    int a[noe];
+    for(i=0;i<noe;i++)
+    {
+        printf("Enter value:");scanf("%d",&a[i]);
+    }
+    printf("\n\nvalues entered!!\n\n");
+    printf("\nEnter values in order:\n");
+    for(j=0;j<noe;j++)
+    {
+        printf("Value %d:",j);
+        scanf("%d",&a[j]);
+    }    
+    for(int k=0;k<noe;k++)
+    {
+        if(a[i]==a[j])
+        {
+            printf("ALL VALUES ARE EQUAL !!\n");
+        }
+        else
+        {
+            printf("VALUES MISSING\n");
+        }
+    }
+    
+    return 0;
+}
+
+#include <stdio.h>
+int main ()
+{
+    // maximum frequency element
+    int noe;
+    printf("Enter numbe of elements:");
+    scanf("%d",&noe);
+    int a[noe];
+    for(int i=0;i<noe;i++)
+    {
+        printf("Enter value: ");scanf("%d",&a[i]);
+    }
+    printf("\n\nVALUES ENTERED!\n\n");
+    int cnt=0;
+    int maxele=a[0];
+    int maxcnt=0;
+    for(int i=0;i<noe;i++)
+    {
+        int cnt=0;
+        for(int j=0;j<noe;j++)
+        {
+            if(a[i]==a[j])
+            {
+                cnt++;
+            }
+        }
+        if(cnt>maxcnt)
+        {
+            maxcnt=cnt;
+            maxele=a[i];
+        }
+    }
+    printf("Maxmimum frequency element : %d\n",maxele);
+    printf("%d times",maxcnt);
+    return 0;
+    
+}
+
+#include <stdio.h>
+
+int main() {
+    int noe = 5;
+    int a[5] = {1, 23, 45, 98, 77}; 
+    int target_sum = 68;            
+    int found = 0;
+    printf("Target sum to find: %d\n", target_sum);
+    for (int i = 0; i < noe; i++) {
+        for (int j = i + 1; j < noe; j++) {
+            if (a[i] + a[j] == target_sum) {
+                printf("Pair found: %d and %d (at indices %d and %d)\n", a[i], a[j], i, j);
+                found = 1;
+            }
+        }
+    }
+
+    if (!found) {
+        printf("No pair found with the given sum.\n");
+    }
+    return 0;
+}
