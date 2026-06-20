@@ -1,0 +1,164 @@
+#include <stdio.h>
+int main() 
+{
+    int noe;
+    printf("Enter number of elements in the array: ");
+    scanf("%d",&noe);
+    int a[noe];
+    for (int i=0;i<noe;i++) 
+    {
+        printf("Enter value: ");
+        scanf("%d", &a[i]);
+    }
+    printf("Values entered successfully !!\n\n");
+    for (int i = 0; i < noe - 1; i++)
+    {
+        for (int j = 0; j < noe - i - 1; j++) 
+        {
+            if (a[j] > a[j + 1]) 
+            {
+                int temp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = temp;
+            }
+        }
+    }
+    printf("Sorted Array (Bubble Sort):\n");
+    for (int i = 0; i < noe; i++) {
+        printf("%d ", a[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
+#include <stdio.h>
+int main()
+{
+    int noe;
+    printf("Enter number of elements in the array: ");
+    scanf("%d", &noe);
+    int a[noe];
+    for (int i=0;i<noe;i++)
+    {
+        printf("Enter value: ");
+        scanf("%d", &a[i]);
+    }
+    printf("Values entered successfully !!\n\n");
+    for (int i = 0; i < noe - 1; i++) 
+    {
+        int min_idx=i;
+        for (int j=i+1;j<noe;j++) 
+        {
+            if (a[j] < a[min_idx]) 
+            {
+                min_idx=j; 
+            }
+        }
+        int temp = a[min_idx];
+        a[min_idx] = a[i];
+        a[i] = temp;
+    }
+    printf("Sorted Array (Selection Sort):\n");
+    for (int i = 0; i < noe; i++) {
+        printf("%d ", a[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
+#include <stdio.h>
+int main()
+{
+    int noe, target;
+    printf("Enter number of elements in the array: ");
+    scanf("%d", &noe);
+    int a[noe];
+    for (int i = 0; i < noe; i++) 
+    {
+        printf("Enter value: ");
+        scanf("%d", &a[i]);
+    }
+    printf("Values entered successfully !!\n\n");
+    for (int i = 0; i < noe - 1; i++) {
+        for (int j = 0; j < noe - i - 1; j++) {
+            if (a[j] > a[j + 1]) {
+                int temp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = temp;
+            }
+        }
+    }
+    printf("Sorted array before searching: ");
+    for (int i = 0; i < noe; i++) 
+    {
+        printf("%d ", a[i]);
+    }
+    printf("\n\n");
+    printf("Enter the element you want to search for: ");
+    scanf("%d", &target);
+    int low = 0;
+    int high = noe - 1;
+    int found_idx = -1; 
+    while (low <= high) {
+        int mid = low + (high - low) / 2; 
+        if (a[mid] == target) 
+        {
+            found_idx = mid; 
+            break;
+        }
+        else if (a[mid] < target)
+        {
+            low = mid + 1; 
+        }
+        else
+        {
+            high = mid - 1; 
+        }
+    }
+    if (found_idx != -1) {
+        printf("\nElement %d found at index %d in the sorted array!\n", target, found_idx);
+    } else {
+        printf("\nElement %d is not present in the array.\n", target);
+    }
+
+    return 0;
+}
+
+#include <stdio.h>
+int main() 
+{
+    int noe;
+    printf("Enter number of elements in the array: ");
+    scanf("%d", &noe);
+    int a[noe];
+    for (int i = 0; i < noe; i++) 
+    {
+        printf("Enter value: ");
+        scanf("%d", &a[i]);
+    }
+    printf("Values entered successfully !!\n\n");
+    for (int i = 0; i < noe - 1; i++) 
+    {
+        int max_idx = i;
+        for (int j = i + 1; j < noe; j++) 
+        {
+            if (a[j] > a[max_idx]) 
+            {
+                max_idx = j;
+            }
+        }
+        int temp = a[max_idx];
+        a[max_idx] = a[i];
+        a[i] = temp;
+    }
+    printf("Sorted Array (Descending Order):\n");
+    for (int i = 0; i < noe; i++) 
+    {
+        printf("%d ", a[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
