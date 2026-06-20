@@ -1,0 +1,91 @@
+#include <stdio.h>
+int main ()
+{
+    // to merge arrays
+    int noe1,noe2;
+    printf("Enter number of elements in array 1 and 2 : ");
+    scanf("%d %d",&noe1,&noe2);
+    int a1[noe1],a2[noe2];
+    for(int i=0;i<noe1;i++)
+    {
+        printf("Enter value:");scanf("%d",&a1[i]);
+    }
+    printf("\n\nValues entered in array 1 !!\n\n");
+    for(int i=0;i<noe2;i++)
+    {
+        printf("Enter value:");scanf("%d",&a2[i]);
+    }
+    printf("\n\nValues entered in array 2 !!\n\n");
+    int n3=noe1+noe2,merged[n3];
+    for(int j=0;j<noe1;j++)
+    {
+        merged[j]=a1[j];
+    }
+    for(int j=0;j<noe2;j++)
+    {
+        merged[noe2+j]=a2[j];
+    }
+    for(int k=0;k<n3;k++)
+    {
+        printf("%d ",merged[k]);
+    }
+    
+    return 0;
+}
+
+
+
+#include <stdio.h>
+
+int main() {
+    int noe1, noe2;
+    printf("Enter number of elements in array 1: ");
+    scanf("%d", &noe1);
+    int a1[noe1];
+    for (int i = 0; i < noe1; i++) {
+        printf("Enter value for array 1: ");
+        scanf("%d", &a1[i]);
+    }
+    printf("Values entered in array 1 !!\n\n");
+    printf("Enter number of elements in array 2: ");
+    scanf("%d", &noe2);
+    int a2[noe2];
+    for (int i = 0; i < noe2; i++) {
+        printf("Enter value for array 2: ");
+        scanf("%d", &a2[i]);
+    }
+    printf("Values entered in array 2 !!\n\n");
+    int max_possible_size = (noe1 < noe2) ? noe1 : noe2;
+    int intersect_arr[max_possible_size];
+    int intersect_size = 0;
+    for (int i = 0; i < noe1; i++) {
+        for (int j = 0; j < noe2; j++) {
+            if (a1[i] == a2[j]) {
+                int is_duplicate = 0;
+                for (int k = 0; k < intersect_size; k++) {
+                    if (intersect_arr[k] == a1[i]) {
+                        is_duplicate = 1;
+                        break;
+                    }
+                }
+                if (!is_duplicate) {
+                    intersect_arr[intersect_size] = a1[i];
+                    intersect_size++;
+                }
+                break; 
+            }
+        }
+    }
+    printf("Intersection of the arrays:\n");
+    if (intersect_size == 0) {
+        printf("No common elements found.");
+    } else {
+        for (int i = 0; i < intersect_size; i++) {
+            printf("%d ", intersect_arr[i]);
+        }
+    }
+    printf("\n");
+
+    return 0;
+}
+
