@@ -1,0 +1,164 @@
+#include <stdio.h>
+int main() 
+{
+    int r1,c1,r2,c2;
+    printf("Enter rows and columns for Matrix 1: ");
+    scanf("%d %d", &r1, &c1);
+    int m1[r1][c1];
+    for (int i = 0; i < r1; i++) 
+    {
+        for (int j = 0; j < c1; j++) 
+        {
+            printf("Enter value for Matrix 1 [%d][%d]: ", i, j);
+            scanf("%d", &m1[i][j]);
+        }
+    }
+    printf("\nEnter rows and columns for Matrix 2: ");
+    scanf("%d %d", &r2, &c2);
+    int m2[r2][c2];
+    for (int i = 0; i < r2; i++) 
+    {
+        for (int j = 0; j < c2; j++) 
+        {
+            printf("Enter value for Matrix 2 [%d][%d]: ", i, j);
+            scanf("%d", &m2[i][j]);
+        }
+    }
+    if (r1 == r2 && c1 == c2) {
+        printf("\nMATRICES CAN BE ADDED!!\n\n");
+        int sum[r1][c1];
+        for (int i = 0; i < r1; i++) 
+        {
+            for (int j = 0; j < c1; j++) 
+            {
+                sum[i][j] = m1[i][j] + m2[i][j];
+            }
+        }
+        printf("Resulting Sum Matrix:\n");
+        for (int i = 0; i < r1; i++) 
+        {
+            for (int j = 0; j < c1; j++)
+            {
+                printf("%d ", sum[i][j]);
+            }
+            printf("\n");
+        }
+    } 
+    else 
+    {
+        printf("\nError: Matrices cannot be added! Dimensions do not match.\n");
+    }
+
+    return 0;
+}
+
+#include <stdio.h>
+int main() 
+{
+    int r1,c1,r2,c2;
+    printf("Enter rows and columns for Matrix 1: ");
+    scanf("%d %d", &r1, &c1);
+    int m1[r1][c1];
+    for (int i = 0; i < r1; i++) 
+    {
+        for (int j = 0; j < c1; j++) 
+        {
+            printf("Enter value for Matrix 1 [%d][%d]: ", i, j);
+            scanf("%d", &m1[i][j]);
+        }
+    }
+    printf("\nEnter rows and columns for Matrix 2: ");
+    scanf("%d %d", &r2, &c2);
+    int m2[r2][c2];
+    for (int i = 0; i < r2; i++) 
+    {
+        for (int j = 0; j < c2; j++) 
+        {
+            printf("Enter value for Matrix 2 [%d][%d]: ", i, j);
+            scanf("%d", &m2[i][j]);
+        }
+    }
+    if (r1 == r2 && c1 == c2) {
+        printf("\nMATRICES CAN BE SUBTRACTED!!\n\n");
+        int diff[r1][c1];
+        for (int i = 0; i < r1; i++) 
+        {
+            for (int j = 0; j < c1; j++) 
+            {
+                diff[i][j] = m1[i][j] - m2[i][j];
+            }
+        }
+        printf("Resulting Difference Matrix:\n");
+        for (int i = 0; i < r1; i++) 
+        {
+            for (int j = 0; j < c1; j++)
+            {
+                printf("%d ", diff[i][j]);
+            }
+            printf("\n");
+        }
+    } 
+    else 
+    {
+        printf("\nError: Matrices cannot be subtracted ! Dimensions do not match.\n");
+    }
+
+    return 0;
+}
+
+#include <stdio.h>
+int main()
+{
+    // transpose of a matrix
+    int r,c;
+    printf("Enter number of rows and cloumns: ");
+    scanf("%d %d",&r,&c);
+    int m[r][c];
+    for(int i=0;i<r;i++)
+    {
+        for(int j=0;j<c;j++)
+        {
+            printf("Enter value of [%d][%d]: ",i,j);scanf("%d",&m[i][j]);
+        }
+    }
+    printf("\n\nVALUES ENTERED!!\n\n");
+    printf("TRANSPOSE OF THE ABOVE MATRIX: \n");
+    for(int i=0;i<r;i++)
+    {
+        for(int j=0;j<c;j++)
+        {
+            printf("%d\n",m[j][i]);
+        }
+    }
+    return 0;
+}
+
+#include <stdio.h>
+int main() 
+{
+    int r, c;
+    printf("Enter number of rows and columns: ");
+    scanf("%d %d", &r, &c);
+    if (r != c) 
+    {
+        printf("Diagonal sum requires a square matrix (Rows must equal Columns)!\n");
+        return 1;
+    }
+    int m[r][c];
+    for (int i = 0; i < r; i++)
+    {
+        for (int j = 0; j < c; j++)
+        {
+            printf("Enter values of [%d][%d]: ", i, j);
+            scanf("%d", &m[i][j]);
+        }
+    }
+    printf("\n\nVALUES ENTERED!!\n\n");
+    int dsum = 0;
+    for (int i = 0; i < r; i++) 
+    {
+        dsum += m[i][i]; 
+    }
+    printf("Sum of the main diagonal elements: %d\n", dsum);
+    return 0;
+}
