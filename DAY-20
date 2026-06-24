@@ -1,0 +1,144 @@
+#include <stdio.h>
+int main ()
+{
+    // to multiply matrices
+    int r,c;
+    printf("Enter number of rows and columns of first matrix : ");
+    scanf("%d %d",&r,&c);
+    int m1[r][c];
+    for(int i=0;i<r;i++)
+    {
+        for(int j=0;j<c;j++)
+        {
+            printf("Enter value : ");scanf("%d",&m1[i][j]);
+        }
+    }
+    printf("\n\nValues Entered!\n\n");
+    int r2,c2;
+    printf("Enter number of rows and cloumns in second matrix : ");
+    scanf("%d %d",&r2,&c2);
+    if(c==r2)
+    {
+        if(c==r2)
+    {
+        printf("\n\nMATRICES CAN BE MULTIPLIED!\n\n");
+        int pdtmat[r][c2];
+        for (int i = 0; i < r; i++) 
+        {
+            for (int j = 0; j < c2; j++) 
+            {
+                pdtmat[i][j] = 0;
+            }
+        }
+        for (int i = 0; i < r; i++) 
+        {
+            for (int j = 0; j < c2; j++) 
+            {
+                for (int k = 0; k < c; k++) 
+                {
+                    pdtmat[i][j] += m1[i][k] * m2[k][j];
+                }
+            }
+        }
+        printf("Resulting Product Matrix:\n");
+        for (int i = 0; i < r; i++) 
+        {
+            for (int j = 0; j < c2; j++) 
+            {
+                printf("%d ", pdtmat[i][j]);
+            }
+            printf("\n");
+        }
+    }
+    
+    else
+    {
+        printf("\n\nMATRICES CANNOT BE MULTIPLIED!\n\n");
+    }
+}
+
+#include <stdio.h>
+int main() 
+{
+    int r, c;
+    printf("Enter number of rows and columns: ");
+    scanf("%d %d", &r, &c);
+    if (r != c) 
+    {
+        printf("\nThe matrix is NOT symmetric (It must be a square matrix where rows = columns).\n");
+        return 0;
+    }
+    int m[r][c];
+    for (int i = 0; i < r; i++)
+    {
+        for (int j = 0; j < c; j++) 
+        {
+            printf("Enter value for [%d][%d]: ", i, j);
+            scanf("%d", &m[i][j]);
+        }
+    }
+    printf("\nValues Entered successfully!\n\n");
+    int is_symmetric = 1; 
+    for (int i = 0; i < r; i++) 
+    {
+        for (int j = 0; j < c; j++)
+        {
+            if (m[i][j] != m[j][i])
+            {
+                is_symmetric = 0; 
+                break; 
+            }
+        }
+        if (!is_symmetric)
+        {
+            break; 
+    }
+    if (is_symmetric) 
+    {
+        printf("The matrix is SYMMETRIC!\n");
+    } else 
+    {
+        printf("The matrix is NOT symmetric!\n");
+    }
+
+    return 0;
+}
+#include <stdio.h>
+int main()
+{
+    int r, c;
+    printf("Enter number of rows and columns: ");
+    scanf("%d %d", &r, &c);
+    int m[r][c];
+    for (int i = 0; i < r; i++) 
+    {
+        for (int j = 0; j < c; j++)
+        {
+            printf("Enter value for [%d][%d]: ", i, j);
+            scanf("%d", &m[i][j]);
+        }
+    }
+    printf("\nValues Entered successfully!\n\n");
+    printf("Row-wise Sum:\n");
+    for (int i = 0; i < r; i++)
+    {
+        int row_sum = 0;
+        for (int j = 0; j < c; j++) 
+        {
+            row_sum += m[i][j];
+        }
+        printf("Sum of Row %d = %d\n", i + 1, row_sum);
+    }
+    printf("\nColumn-wise Sum:\n");
+    for (int j = 0; j < c; j++)
+    {
+        int col_sum = 0;
+        for (int i = 0; i < r; i++)
+        {
+            col_sum += m[i][j];
+        }
+        printf("Sum of Column %d = %d\n", j + 1, col_sum);
+    }
+
+    return 0;
+}
